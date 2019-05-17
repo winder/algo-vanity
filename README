@@ -1,0 +1,7 @@
+Want a lower-entropy keypair where your address starts with your name?
+Tell the vanity address generator what you'd like your address to start with and it'll generate ed25519 keypairs until it finds a match.
+Writes to /tmp/pk and /tmp/sk
+
+Use at your own peril; a keypair whose public key starts with your name will have less entropy than a uniformly random keypair.
+
+Dependencies: libbsd. Alternatively, if you don't want to install libbsd, you can edit random.c and replace arc4random_buf with whatever function your platform has for getting entropy.
